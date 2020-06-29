@@ -1,0 +1,11 @@
+[Desktop Entry]
+Encoding=UTF-8
+Name=ACC
+Comment=ACC Startup
+
+Exec=gnome-terminal -e "bash -c 'source /home/zww/ros2_ws/src/Video_data/ACC/ACC.sh;$SHELL'"
+Terminal=true
+StartupNotify=false
+Type=Application
+Categories=Application;Development;
+Icon=/home/zww/ros2_ws/src/Video_data/EvasiveA/校标-校徽.png

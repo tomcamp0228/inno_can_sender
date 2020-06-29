@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=ACC
+Encoding=UTF-8
+Exec=gnome-terminal -e "bash -c 'source /home/vecow/can_ws/Video_data/AEB/AEB.sh;$SHELL'"
+Icon=/home/vecow/can_ws/Video_data/EvasiveA/icon.png
+Terminal=false
+StartupNotify=true
+Type=Application
+Categories=Application
+Name[en_US]=AEB
