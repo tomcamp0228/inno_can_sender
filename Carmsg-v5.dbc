@@ -1,0 +1,84 @@
+VERSION ""
+
+
+NS_ : 
+	NS_DESC_
+	CM_
+	BA_DEF_
+	BA_
+	VAL_
+	CAT_DEF_
+	CAT_
+	FILTER
+	BA_DEF_DEF_
+	EV_DATA_
+	ENVVAR_DATA_
+	SGTYPE_
+	SGTYPE_VAL_
+	BA_DEF_SGTYPE_
+	BA_SGTYPE_
+	SIG_TYPE_REF_
+	VAL_TABLE_
+	SIG_GROUP_
+	SIG_VALTYPE_
+	SIGTYPE_VALTYPE_
+	BO_TX_BU_
+	BA_DEF_REL_
+	BA_REL_
+	BA_DEF_DEF_REL_
+	BU_SG_REL_
+	BU_EV_REL_
+	BU_BO_REL_
+	SG_MUL_VAL_
+
+BS_:
+
+BU_: VehMsg
+
+
+BO_ 1 Vehicle_Status: 8 VehMsg
+ SG_ Velocity : 7|16@0+ (0.005,-100) [-100|100] "m/s"  VehMsg
+ SG_ Acceleration : 23|16@0+ (0.005,-100) [-100|100] "m/s^2"  VehMsg
+ SG_ Brake : 39|16@0+ (0.02,0) [0|1024] "Bar"  VehMsg
+ SG_ IndLeft : 52|1@0+ (1,0) [0|1] ""  VehMsg
+ SG_ IndRight : 50|1@0+ (1,0) [0|1] ""  VehMsg
+ SG_ IndDouble : 48|1@0+ (1,0) [0|1] ""  VehMsg
+ SG_ MotorErr : 60|1@0+ (1,0) [0|1] ""  VehMsg
+ SG_ SysErr : 58|1@0+ (1,0) [0|1] ""  VehMsg
+ SG_ BatErr : 56|1@0+ (1,0) [0|1] ""  VehMsg
+
+BO_ 2 Vehicle_Position_1: 8 VehMsg
+ SG_ Long : 7|32@0+ (1e-07,-180) [-180|180] "" Vector__XXX
+ SG_ Lat : 39|32@0+ (1e-07,-180) [-180|180] "" Vector__XXX
+
+BO_ 3 Vehicle_Position_2: 8 VehMsg
+ SG_ Alt : 7|32@0+ (2e-07,-100) [-100|400] "" Vector__XXX
+ SG_ Heading : 39|32@0+ (1e-07,0) [0|360] "" Vector__XXX
+
+BO_ 4 Time_Info: 8 VehMsg
+ SG_ Year : 7|8@0+ (1,1900) [1900|2150] "" Vector__XXX
+ SG_ Month : 15|8@0+ (1,0) [0|20] "" Vector__XXX
+ SG_ DayofMonth : 23|8@0+ (1,0) [0|40] "" Vector__XXX
+ SG_ Hour : 31|8@0+ (1,0) [0|30] "" Vector__XXX
+ SG_ Minute : 39|8@0+ (1,0) [0|70] "" Vector__XXX
+ SG_ Second : 47|8@0+ (1,0) [0|70] "" Vector__XXX
+ SG_ Millisecond : 55|16@0+ (1,0) [0|10000] "" Vector__XXX
+
+
+
+CM_ SG_ 1 Velocity "Vehicle velocity in m/s";
+CM_ SG_ 1 Acceleration "Vehicle acceleration in m/s^2
+";
+CM_ SG_ 1 Brake "Vehicle brake force in Bar
+";
+CM_ SG_ 1 IndLeft "Indicator light left, 0 for off, 1 for on";
+CM_ SG_ 1 IndRight "Indicator light right, 0 for off, 1 for on";
+CM_ SG_ 1 IndDouble "Indicator light both side, 0 for off, 1 for on";
+CM_ SG_ 1 MotorErr "Light for motor error light, 0 for off, 1 for on";
+CM_ SG_ 1 SysErr "Light for system error light, 0 for off, 1 for on";
+CM_ SG_ 1 BatErr "Light for battery error light, 0 for off, 1 for on";
+CM_ SG_ 2 Long "Vehicle lognitude";
+CM_ SG_ 2 Lat "Vehicle latitude";
+CM_ SG_ 3 Alt "Vehicle altitude";
+CM_ SG_ 3 Heading "Vehicle heading";
+
